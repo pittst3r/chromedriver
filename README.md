@@ -12,11 +12,6 @@ version: '3.8'
 services:
   chromedriver:
     image: pittst3r/chromedriver:latest
-    command:
-      - --whitelisted-ips=172.10.0.1
-      - --port=4567
-    networks:
-      - chromedriver_subnet
     # Chrome can't start without this. You can also set it to `seccomp=chrome.json`
     # if you download the chrome.json file from this git repo and place it next to
     # your docker-compose.yml
@@ -25,16 +20,6 @@ services:
     ports:
       - "4567:4567"
       - "9222:9222"
-
-networks:
-  # So we can peg the gateway IP and whitelist it for chromedriver.
-  # This is the address that chromedriver sees requests coming from.
-  chromedriver_subnet:
-    ipam:
-      driver: default
-      config:
-        - gateway: "172.10.0.1"
-          subnet: "172.10.0.0/24"
 ```
 
 ```

@@ -1,0 +1,10 @@
+app, test-server
+
+log {
+    format logfmt
+    level error
+}
+
+tls internal
+
+reverse_proxy static:3000

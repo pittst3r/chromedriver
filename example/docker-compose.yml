@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  static:
+    image: halverneus/static-file-server
+    environment:
+      - PORT=3000
+      - FOLDER=/app
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: ./app
+        target: /app
+  app:
+    depends_on:
+      - static
+    image: caddy
+    ports:
+      - "443:443"
+    volumes:
+      - type: bind
+        source: ./app/data
+        target: /data
+      - type: bind
+        source: ./app/config
+        target: /config
+      - type: bind
+        source: ./app/Caddyfile
+        target: /etc/caddy/Caddyfile
+  chromedriver:
+    depends_on:
+      - app
+    image: pittst3r/chromedriver:latest
+    security_opt:
+      - seccomp=unconfined
+    ports:
+      - "4567:4567"
+      - "9222:9222"
+  bigtest:
+    depends_on:
+      - chromedriver
+      - app
+      - static
+    build:
+      context: ./bigtest
+    command: server
+    ports:
+      - "24001-24005:24001-24005"
+    volumes:
+      - type: bind
+        source: ./bigtest/test
+        target: /test
+      - type: bind
+        source: ./bigtest/node_modules
+        target: /node_modules
+      - type: bind
+        source: ./bigtest/bigtest.json
+        target: /bigtest.json

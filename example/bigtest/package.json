@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@bigtest/interactor": "^0.17.0",
+    "@bigtest/webdriver": "^0.6.1-429f3b1b",
+    "bigtest": "^0.1.5"
+  },
+  "resolutions": {
+    "@bigtest/webdriver": "^0.6.1-429f3b1b"
+  }
+}

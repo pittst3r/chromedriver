@@ -2,7 +2,6 @@ FROM debian
 
 RUN apt-get update -y && apt-get install -y \
     apt-transport-https \
-    ca-certificates \
     curl \
     unzip \
     gnupg \
@@ -37,3 +36,4 @@ VOLUME /home/chrome/data
 USER chrome
 
 ENTRYPOINT [ "/home/chrome/chromedriver" ]
+CMD [ "--port=4567", "--whitelisted-ips" ]

@@ -1,0 +1,17 @@
+{
+  "app": {
+    "url": "http://static:3000"
+  },
+  "testFiles": ["./test/**/*.test.ts"],
+  "launch": ["chrome.headless"],
+  "drivers": {
+    "chrome.headless": {
+      "module": "@bigtest/webdriver",
+      "options": {
+        "driverUrl": "http://chromedriver:4567",
+        "headless": true
+      }
+    }
+  }
+}
+  
