@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  static:
+  app:
     image: halverneus/static-file-server
     logging:
       driver: none
@@ -17,7 +17,7 @@ services:
   app_proxy:
     container_name: bigtest
     depends_on:
-      - static
+      - app
     image: caddy:alpine
     logging:
       driver: none
@@ -33,7 +33,7 @@ services:
   ws_proxy:
     container_name: websocket
     depends_on:
-      - static
+      - app
     image: caddy:alpine
     logging:
       driver: none
@@ -49,7 +49,7 @@ services:
   manifest_proxy:
     container_name: manifest
     depends_on:
-      - static
+      - app
     image: caddy:alpine
     logging:
       driver: none
@@ -82,7 +82,7 @@ services:
       - app_proxy
       - ws_proxy
       - manifest_proxy
-      - static
+      - app
     build:
       context: ./bigtest
     command: server

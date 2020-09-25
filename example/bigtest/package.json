@@ -1,10 +1,16 @@
 {
   "devDependencies": {
+    "@bigtest/agent": "^0.13.0-ea6a03e7",
     "@bigtest/interactor": "^0.17.0",
-    "@bigtest/webdriver": "^0.6.1-429f3b1b",
+    "@bigtest/project": "^0.9.0-ea6a03e7",
+    "@bigtest/server": "^0.15.0-ea6a03e7",
+    "@bigtest/webdriver": "^0.6.2-ea6a03e7",
     "bigtest": "^0.1.5"
   },
   "resolutions": {
-    "@bigtest/webdriver": "^0.6.1-429f3b1b"
+    "@bigtest/agent": "^0.13.0-ea6a03e7",
+    "@bigtest/project": "^0.9.0-ea6a03e7",
+    "@bigtest/server": "^0.15.0-ea6a03e7",
+    "@bigtest/webdriver": "^0.6.2-ea6a03e7"
   }
 }

@@ -862,10 +862,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@bigtest/agent@^0.13.0":
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/@bigtest/agent/-/agent-0.13.0.tgz#b5953c127cf03689e8f3bf3b1b4f50bb84ba9013"
-  integrity sha512-/x0fD4MVRyHzym97DLgLNxsEgG0hcKEZqJx7uiOGwK6tOVsBkTxyyvsYmXY/6GhIyB8p4AJOBbDoKocKigaylg==
+"@bigtest/agent@^0.13.0", "@bigtest/agent@^0.13.0-ea6a03e7":
+  version "0.13.0-ea6a03e7"
+  resolved "https://registry.yarnpkg.com/@bigtest/agent/-/agent-0.13.0-ea6a03e7.tgz#7a2dca28183e956115dc18b57a9b4f91784f354e"
+  integrity sha512-5rFdnaNkJhhcefhUWBi2dA5zkAHf7yLN4r8WN2D3+WOLG/q81Wh1K9v4e7IZYqzFoEEsCB7ph+HJMtRegqHEpA==
   dependencies:
     "@bigtest/effection" "^0.5.4"
     "@bigtest/effection-express" "^0.8.0"
@@ -876,17 +876,7 @@
     effection "^0.7.0"
     error-stack-parser "^2.0.6"
     get-source "^2.0.11"
-
-"@bigtest/atom@^0.8.2":
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/@bigtest/atom/-/atom-0.8.2.tgz#b08689a8ee067cab42ffc11b90b65647025b3f2f"
-  integrity sha512-Pa4jv7hFqzbY+eBtcNpldeDTSU3UvG5zlXSxM6Fl2KbCAYgalJI4+s0GEm+GlC3oKV1yngujSDLTmiep8fjhug==
-  dependencies:
-    "@effection/channel" "^0.6.7"
-    "@effection/events" "^0.7.8"
-    "@effection/subscription" "^0.11.0"
-    effection "0.7.0"
-    ramda "0.27.0"
+    istanbul-lib-coverage "^3.0.0"
 
 "@bigtest/atom@^0.9.0":
   version "0.9.0"
@@ -1004,18 +994,18 @@
   resolved "https://registry.yarnpkg.com/@bigtest/performance/-/performance-0.5.0.tgz#195f2c445cbe2ebe4357e08f7b39449240bf62d7"
   integrity sha512-5lmaul6UIdyEApxapYumCShEdKca7PjwYlcIHiu/5iI032DUQsq4dygYMX07cgevfCZSR2fss57uMGfdB22GbQ==
 
-"@bigtest/project@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@bigtest/project/-/project-0.9.0.tgz#898258c614fde2aad2111a34a1a06c90ef79e766"
-  integrity sha512-wlYKZjhrhxfPGXqfIFAcGVICStwfEo3calDeT7fh+gsd129ZNzvRhH9Q8QNtCTPCgzC4Y7vyGAYbq3KdqVIdUA==
+"@bigtest/project@^0.9.0", "@bigtest/project@^0.9.0-ea6a03e7":
+  version "0.9.0-ea6a03e7"
+  resolved "https://registry.yarnpkg.com/@bigtest/project/-/project-0.9.0-ea6a03e7.tgz#5d732de4d13acbd32358d275aa4ec0d531c97b19"
+  integrity sha512-TIiZljobZJ3cjh9iC/jlTfSscHUR/1jKy6SNaISkCakrJpgbg2xta5+03QE7gySNgjgUL7HkRJq81TGM0KkPog==
   dependencies:
     "@bigtest/driver" "^0.5.3"
     effection "^0.7.0"
 
-"@bigtest/server@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@bigtest/server/-/server-0.15.0.tgz#4d70a68ae25de93db75ba4c88af0ede4593592a7"
-  integrity sha512-kcR4Ww+ab/DXSa0S/Z2YgGcNjmQA1s+ykNeLincaC9jvZn1D1fXIVCoTZXb3IOio2/ZTbT1yFBpikwJL+utYbA==
+"@bigtest/server@^0.15.0", "@bigtest/server@^0.15.0-ea6a03e7":
+  version "0.15.0-ea6a03e7"
+  resolved "https://registry.yarnpkg.com/@bigtest/server/-/server-0.15.0-ea6a03e7.tgz#e1b8c595863d37842672efce76771d10cee23db5"
+  integrity sha512-x9s0pqoiuN9G8ZV4xAES3SSdomJ+lyu2Mm6NsuopaXpq+TojSHzFlSkRIXgw4VuzuXejBbv4pk/3bXplNvsoFA==
   dependencies:
     "@babel/core" "^7.10.4"
     "@babel/plugin-transform-runtime" "^7.10.4"
@@ -1058,12 +1048,12 @@
   resolved "https://registry.yarnpkg.com/@bigtest/suite/-/suite-0.9.0.tgz#7a7714d50bc80f7ae4afc1a6a5c175ae205f03fa"
   integrity sha512-q33/unTqAxRgPPakEUkOMELuEhbRHL9eRfsjwccJGuh03kgslXCNCBQ5oGgHckJZqirhVqoY98WVsqiKZGYP4g==
 
-"@bigtest/webdriver@^0.6.1-429f3b1b", "@bigtest/webdriver@^0.6.2":
-  version "0.6.1-429f3b1b"
-  resolved "https://registry.yarnpkg.com/@bigtest/webdriver/-/webdriver-0.6.1-429f3b1b.tgz#995d756e7eef44bfa2e19b99f2addc6dff5d6ef7"
-  integrity sha512-D8wsm0iXse1olajEXHVXp6XLygW/0dQi5vDWLKKj5zWOK/BJ42nGCmzWSZpcdvS37npk4B3kXBZfqC4KSmlhtg==
+"@bigtest/webdriver@^0.6.2", "@bigtest/webdriver@^0.6.2-ea6a03e7":
+  version "0.6.2-ea6a03e7"
+  resolved "https://registry.yarnpkg.com/@bigtest/webdriver/-/webdriver-0.6.2-ea6a03e7.tgz#41387f1967cb387770525d996abc1b9630f6a7df"
+  integrity sha512-eQ1n/VB+KW/CLK1aITZZKyGdfO7SKXFACKSeZBQzcwdF3uPNhv18HGbX6fm+v+cMZAngTSp0kpgC9MIq2p2T3A==
   dependencies:
-    "@bigtest/atom" "^0.8.2"
+    "@bigtest/atom" "^0.9.0"
     "@bigtest/driver" "^0.5.3"
     "@effection/fetch" "^0.1.2"
     "@effection/node" "^0.8.0"
@@ -2625,6 +2615,11 @@ isstream@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
+
+istanbul-lib-coverage@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/istanbul-lib-coverage/-/istanbul-lib-coverage-3.0.0.tgz#f5944a37c70b550b02a78a5c3b2055b280cec8ec"
+  integrity sha512-UiUIqxMgRDET6eR+o5HbfRYP1l0hqkWOs7vNxC/mggutCMUIhWMm8gAHb8tHlyfD3/l6rlgNA5cKdDzEAf6hEg==
 
 iterall@^1.2.2:
   version "1.3.0"

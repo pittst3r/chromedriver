@@ -1,6 +1,19 @@
 {
+  "port": 24002,
   "app": {
-    "url": "http://static:3000"
+    "url": "http://app:3000"
+  },
+  "proxy": {
+    "externalUrl": "https://bigtest",
+    "port": 24001
+  },
+  "connection": {
+    "externalUrl": "wss://websocket:543",
+    "port": 24003
+  },
+  "manifest": {
+    "externalUrl": "https://manifest:643",
+    "port": 24005
   },
   "testFiles": ["./test/**/*.test.ts"],
   "launch": ["chrome.headless"],
@@ -14,4 +27,3 @@
     }
   }
 }
-  
