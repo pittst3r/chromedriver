@@ -1,0 +1,5 @@
+websocket:543
+
+tls internal
+
+reverse_proxy ws://server:24003

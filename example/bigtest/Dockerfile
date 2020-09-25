@@ -1,3 +1,5 @@
 FROM node:14-alpine
 
-ENTRYPOINT [ "/node_modules/.bin/bigtest" ]
+RUN ln -s /node_modules/.bin/bigtest /usr/bin/bigtest
+
+ENTRYPOINT [ "bigtest" ]

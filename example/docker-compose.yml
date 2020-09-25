@@ -3,6 +3,8 @@ version: '3.8'
 services:
   static:
     image: halverneus/static-file-server
+    logging:
+      driver: none
     environment:
       - PORT=3000
       - FOLDER=/app
@@ -12,35 +14,74 @@ services:
       - type: bind
         source: ./app
         target: /app
-  app:
+  app_proxy:
+    container_name: bigtest
     depends_on:
       - static
-    image: caddy
+    image: caddy:alpine
+    logging:
+      driver: none
     ports:
       - "443:443"
     volumes:
       - type: bind
-        source: ./app/data
+        source: ./app-proxy/data
         target: /data
       - type: bind
-        source: ./app/config
-        target: /config
+        source: ./app-proxy/Caddyfile
+        target: /etc/caddy/Caddyfile
+  ws_proxy:
+    container_name: websocket
+    depends_on:
+      - static
+    image: caddy:alpine
+    logging:
+      driver: none
+    ports:
+      - "543:543"
+    volumes:
       - type: bind
-        source: ./app/Caddyfile
+        source: ./ws-proxy/data
+        target: /data
+      - type: bind
+        source: ./ws-proxy/Caddyfile
+        target: /etc/caddy/Caddyfile
+  manifest_proxy:
+    container_name: manifest
+    depends_on:
+      - static
+    image: caddy:alpine
+    logging:
+      driver: none
+    ports:
+      - "643:643"
+    volumes:
+      - type: bind
+        source: ./manifest-proxy/data
+        target: /data
+      - type: bind
+        source: ./manifest-proxy/Caddyfile
         target: /etc/caddy/Caddyfile
   chromedriver:
     depends_on:
-      - app
+      - app_proxy
+      - ws_proxy
+      - manifest_proxy
     image: pittst3r/chromedriver:latest
+    logging:
+      driver: none
     security_opt:
       - seccomp=unconfined
     ports:
       - "4567:4567"
       - "9222:9222"
-  bigtest:
+  bigtest_server:
+    container_name: server
     depends_on:
       - chromedriver
-      - app
+      - app_proxy
+      - ws_proxy
+      - manifest_proxy
       - static
     build:
       context: ./bigtest

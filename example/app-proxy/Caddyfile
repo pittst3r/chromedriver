@@ -1,0 +1,5 @@
+bigtest:443
+
+tls internal
+
+reverse_proxy http://server:24001

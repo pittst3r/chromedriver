@@ -1,0 +1,5 @@
+manifest:643
+
+tls internal
+
+reverse_proxy http://server:24005
