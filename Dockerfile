@@ -21,19 +21,21 @@ RUN curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add - 
 
 COPY local.conf /etc/fonts/local.conf
 
-RUN mkdir -p /home/chrome/data
+RUN mkdir -p /home/chrome/{data,bin}
 
 RUN FULL_VERSION=$(curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE) \
     && curl --output /home/chrome/chromedriver.zip https://chromedriver.storage.googleapis.com/$FULL_VERSION/chromedriver_linux64.zip \
-    && unzip -d /home/chrome /home/chrome/chromedriver.zip \
+    && unzip -d /home/chrome/bin /home/chrome/chromedriver.zip \
     && rm /home/chrome/chromedriver.zip
 
 RUN groupadd -r chrome \
     && useradd -r -g chrome -G audio,video chrome \
     && chown -R chrome:chrome /home/chrome
 
+ENV PATH=/home/chrome/bin:${PATH}
+
 VOLUME /home/chrome/data
 USER chrome
 
-ENTRYPOINT [ "/home/chrome/chromedriver" ]
+ENTRYPOINT [ "chromedriver" ]
 CMD [ "--port=4567", "--whitelisted-ips" ]
